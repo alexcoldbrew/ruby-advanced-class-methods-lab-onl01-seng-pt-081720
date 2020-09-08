@@ -51,8 +51,10 @@ class Song
   def self.new_from_filename(filename)
     # separates the artist name and song name based on format given
     new_file = filename.split(" - ")
+    # artist name is now equal to first index of array that was created when split
     artist_name = new_file[0]
-    
+    # 
+    song_name = new_file[1]
   end
   
   def self.create_from_filename(filename)
