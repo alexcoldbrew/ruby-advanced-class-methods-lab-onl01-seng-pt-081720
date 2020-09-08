@@ -49,7 +49,9 @@ class Song
   end
 
   def self.new_from_filename(filename)
+    # separates the artist name and song name based on format given
     new_file = filename.split(" - ")
+    
   end
   
   def self.create_from_filename(filename)
