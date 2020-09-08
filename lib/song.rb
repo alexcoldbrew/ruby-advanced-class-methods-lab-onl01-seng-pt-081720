@@ -53,7 +53,7 @@ class Song
     new_file = filename.split(" - ")
     # artist name is now equal to first index of array that was created when split
     artist_name = new_file[0]
-    # 
+    # using gsub (global substitute) on a string, can replace the .mp3 with nothing ("")
     song_name = new_file[1].gsub(".mp3","")
   end
   
