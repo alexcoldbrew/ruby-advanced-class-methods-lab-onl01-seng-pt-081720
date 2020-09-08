@@ -10,4 +10,45 @@ class Song
     self.class.all << self
   end
 
+  def self.create
+    # initializes new Song
+    song = Song.new
+    # utilizes pre-built saving method
+    song.save
+    # returns Song instance
+    song
+  end
+  
+  def self.new_by_name(song_name)
+    # initializes new Song
+    song = self.new
+    # name accessor (name of Song instance) is now = to passed in name
+    song.name = song_name
+    # return the song instance
+    song
+  end
+
+  def self.create_by_name(song_name)
+    song = self.new
+    song.name = song_name
+    song.save
+    song
+  end
+
+  def self.find_by_name(song_name)
+    self.all.find{|song| song.name == song_name}
+  end
+
+  def self.find_or_create_by_name(song_name)
+    # just calls on our existing methods with the || (or) operand
+    self.find_by_name(song_name) || self.create_by_name(song_name)
+  end
+
+  def self.alphabetical
+    self.all.sort_by {|song| song.name}
+  end
+
+  def self.destroy_all
+    @@all.clear
+  end
 end
