@@ -56,7 +56,8 @@ class Song
     # using gsub (global substitute) on a string, can replace the .mp3 with nothing ("")
     song_name = new_file[1].gsub(".mp3","")
     song = self.create
-    
+    song.name = song_name
+    song.artist_name = artist_name
   end
   
   def self.create_from_filename(filename)
