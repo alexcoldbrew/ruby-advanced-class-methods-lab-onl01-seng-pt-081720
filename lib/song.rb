@@ -65,6 +65,7 @@ class Song
     new_file = filename.split(" - ")
     artist_name = new_file[0]
     song_name = new_file[1].gsub(".mp3","")
+    song = self.create
     song.save
   end
 
